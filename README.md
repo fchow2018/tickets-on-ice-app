@@ -24,7 +24,7 @@ Phone version: https://drive.google.com/open?id=1DPd0c6QZN-IgwdTQU6XbYkrnJmse46I
 <br>Desktop version: https://drive.google.com/open?id=10gSUG0ackIVXgm_SrtUFiTKIJdWE1j-W
 
 # ERD
-![image of code](images/TicketsOnIceERD.png)
+![image of code, TicketsOnIceERD](TicketsOnIceERD.png)
 
 # Sprints
 <ul><b>Sprint 1 (4/9):</b></ul>
@@ -42,7 +42,7 @@ Phone version: https://drive.google.com/open?id=1DPd0c6QZN-IgwdTQU6XbYkrnJmse46I
 <li>Create splash page</li>
 <br>
 
-<b><ul>Sprint 4 (4/11):</ul></b>
+<b><ul>Sprint 4 (4/12):</ul></b>
 <li>Create page to view tickets</li>
 <li>Make a page that lists hockey arenas in alphabetical order for users to choose from.</li>
 <li>Make the account page.</li>
