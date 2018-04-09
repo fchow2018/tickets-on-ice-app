@@ -9,7 +9,7 @@ Phone version: https://drive.google.com/open?id=1DPd0c6QZN-IgwdTQU6XbYkrnJmse46I
 <br>Desktop version: https://drive.google.com/open?id=10gSUG0ackIVXgm_SrtUFiTKIJdWE1j-W
 
 # ERD
-![image of code](images/TicketsOnIceERD.png)
+![image of code, TicketsOnIceERD](TicketsOnIceERD.png)
 
 # Sprints
 <ul><b>Sprint 1 (4/9):</b></ul>
