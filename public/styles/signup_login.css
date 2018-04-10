@@ -1,0 +1,40 @@
+body {
+  background-color: #d4f0ff;
+}
+
+.row h1{
+  font-size: 25px;
+  margin-top: 0.5em;
+  padding-bottom: 5em;
+  text-align: center;
+
+}
+
+.row h3{
+  font-size: 20px;
+  margin-top: 5em;
+  text-align: center;
+  /* padding-top: -5em; */
+
+}
+
+.row {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+#Login, #Signup {
+  margin-left: 2em;
+  background-color: #edf9ff;
+  border-color: #edf9ff;
+}
+
+#Login {
+  margin-bottom: 1em;
+}
+
+a {
+  color: black;
+}

@@ -1,0 +1,48 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+
+  <!-- set viewport to device width to make site responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap css -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- custom styles -->
+  <link rel="stylesheet" type="text/css" href="/styles/signup_login.css">
+
+  <!-- jquery -->
+  <script type="text/javascript" src="/scripts/jquery.js"></script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- custom script -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <title>Sign Up/Login</title>
+</head>
+<body>
+
+  <div class='container'>
+    <div class='row'>
+      <h3> Welcome to </h3>
+      <h1> Tickets On Ice </h1>
+    </div>
+  </div>
+      <div class='row'>
+        <div class='col-10 offset-1' id='button'>
+          <div class='btn-container'>
+            <button class='btn  btn-lg col-8' id='login' data-target='#Login'><a href='/login'>Login </button>
+          </div>
+          <div class='btn-container'>
+            <button class='btn btn-info btn-lg col-8' id='signup' data-target='#Signup'><a href='/signup'>Signup</a> </button>
+          </div>
+          <p class='text-center' id='error'></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
