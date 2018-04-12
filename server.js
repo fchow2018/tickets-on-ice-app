@@ -110,7 +110,7 @@ app.get('/about', function(req,res) {
 });
 
 app.get('/checkout', function(req,res) {
-  res.render('about');
+  res.render('checkout');
 });
 
 app.get('/profile', isLoggedIn, function(req, res) {

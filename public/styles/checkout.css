@@ -1,0 +1,70 @@
+body {
+  background-color: #d4f0ff;
+}
+
+h5 {
+  margin-left: 0.8em;
+}
+.navbar-brand {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.navbar {
+  background-color: #d4f0ff;
+}
+
+label {
+  margin-left: 0.8em;
+}
+
+input {
+  margin-left: 0.8em;
+}
+
+input#form_name{
+  width: 50%;
+}
+
+textarea {
+  margin-left: 0.8em;
+}
+
+#creditCardType {
+  margin-top: -2.6em;
+  margin-left: 12.5em;
+  width: 44%;
+}
+
+#expireMonth {
+  margin-top: -1em;
+  margin-left: 0.9em;
+  width: 89%;
+}
+
+#expireMonth {
+  margin-top: -1em;
+  margin-left: 0.9em;
+  width: 89%;
+}
+
+#expireYear {
+  margin-top: -2.9em;
+  margin-left: 9em;
+  width: 43%;
+}
+
+#security_code {
+  margin-top: -3.2em;
+  margin-left: 16.2em;
+  width: 28%;
+}
+
+li {
+  list-style-type: none;
+}
+
+#menu li a {
+  list-style-type: none;
+  color: black;
+}
