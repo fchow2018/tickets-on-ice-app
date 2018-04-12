@@ -1,0 +1,30 @@
+.form-control {
+  margin-top: 1em;
+}
+
+a {
+  color: black;
+}
+
+button {
+  margin-left: 1.5em;
+  background-color: #edf9ff;
+  text-transform: uppercase;
+}
+
+.back_button {
+  margin-top: 2em;
+  padding-bottom: 5em;
+}
+
+#btn_login {
+  margin-bottom: 10em;
+}
+
+.signup a {
+  text-align: center;
+}
+
+.signup {
+  font-size: 15px;
+}

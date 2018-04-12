@@ -3,11 +3,13 @@ var app=express();
 var db=require('./models/index.js');
 var bodyParser = require('body-parser');
 var OAuth2Strategy = require('passport-oauth2'),
-    LocalStrategy = require('passport-local').Strategy,
-    cookieParser = require('cookie-parser'),
-    TMAPI = require('tm-api')
+LocalStrategy = require('passport-local').Strategy,
+cookieParser = require('cookie-parser'),
+TMAPI = require('tm-api')
 var passport = require('passport');
 var session = require('express-session');
+var flash = require('connect-flash');
+// var User = require('models/User');
 TMAPI.setAPIKey("l9XiABE2P5GIQGAhtFcErCCFoA2Ap9R4");
 TMAPI.setSecret("bzE5ahSftAgfRSMe");
 
@@ -18,6 +20,7 @@ var User = db.User;
 var Ticket = db.Ticket;
 var Price = db.Price;
 
+app.use(express.static('__tickets-on-ice-app' + '/public'));
 // session
 app.use(session({
   secret: 'ticket_bought', // secret password
@@ -29,12 +32,10 @@ app.use(session({
 app.use(cookieParser());
 
 // passport config
+app.use(session({secret: 'ticketsonice' }));
 app.use(passport.initialize());
 app.use(passport.session());
-
-  passport.use(new LocalStrategy(User.authenticate()));
-  passport.serializeUser(User.serializeUser());
-  passport.deserializeUser(User.deserializeUser());
+app.use(flash());
 
 // Configure app
 app.set('views', __dirname + '/views');      // Views directory
@@ -52,13 +53,7 @@ app.use(function(req, res, next) {
 
 //basic root route
 app.get('/',function(req,res){
-  // if conencted
-  if(req.user){
-    res.redirect('/home')
-  }else{
-
-res.render('signup_login.ejs');
-}
+  res.render('signup_login.ejs');
 });
 
 // app.get('/',function(req,res){
@@ -66,14 +61,49 @@ res.render('signup_login.ejs');
 //
 // });
 
-app.get('/signup', function(req,res){
-  res.render('signup');
-});
-
 app.get('/signup_login', function(req,res){
   res.render('signup_login');
 })
 
+// show the login form
+app.get('/login', function(req, res){
+
+  // render the page and pass in any flash data if it exists
+  res.render('login', { message: req.flash('loginMessage') });
+});
+
+// process the login forms
+// app.post('/login', do all our passport stuff here);
+
+// show the signup form
+app.get('/signup', function(req,res){
+
+  // render the page and pass in any flash data if it exists
+  res.render('signup', { message: req.flash('signupMessage') });
+});
+
+// process the login forms
+// app.post('/login', do all our passport stuff here);
+
+app.get('/home', function(req,res){
+  res.render('home');
+});
+
+app.get('/account', function(req,res){
+  res.render('account');
+})
+
+app.get('/profile', isLoggedIn, function(req, res) {
+  res.render('profile', {
+    user: req.user
+  });
+});
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated())
+  return next();
+  res.redirect('/');
+}
 app.post('/signup',function(req,res){
   // ragex for email verification
   var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -96,22 +126,65 @@ app.post('/signup',function(req,res){
   }
 });
 }})});
-// app.get('/home',function(req,res){
-//
-//   if(req.user){
-//   res.render("home", {user:req.user,ssn:ssn });
-//
-// }else{
-//   res.redirect('/');
-//
-// }
-// });
 
-app.post('/login', passport.authenticate('local'),function (req,res) {
+app.post("/signup", function (req, res) {
+  User.register(new User({ username: req.body.username, }), req.body.password,
+      function () {
+        passport.authenticate("local")(req, res, function() {
+          res.redirect("/home");
+        });
+      }
+  );
+});
 
-  res.redirect('/users/' + req.user.username);
-})
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findOne({
+    _id: id
+}, '-password -salt', function(err, user) {
+    done(err, user);
+  });
+});
+
+// passport.use('local-signup', new LocalStrategy({
+//   usernameField: 'email',
+//   passwordField: 'password',
+//   passReqToCallback: true // pass back entire request to the callback
+// },
+
+// function (req, email, password, done) {
+//   process.nextTick(function() {
+//     User.findOne({ 'local.email': email }, function(err, user) {
+//       if (err)
+//       return done(err);
 //
+//       if (user) {
+//         return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+//       } else {
+//         var newUser = new User();
+//         newUser.local.email = email;
+//         newUser.local.password = newUser.generateHash(password);
+//
+//         newUser.save(function(err) {
+//           if (err)
+//           throw err;
+//           return done(null, newUser);
+//         });
+//       }
+//     });
+//   });
+// }));
+//
+// app.post('/signup', passport.authenticate('local-signup', {
+//   successRedirect: '/profile', // redirect to the secure profile selection
+//   failureRedirect: '/signup', // redirect back to the signup page if there is an error
+//   failureFlash: true // allow flash messages
+// }));
+
+
 app.listen(process.env.PORT || 3000,function(){
   console.log('server running');
 });

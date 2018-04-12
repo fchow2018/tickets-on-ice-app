@@ -1,0 +1,21 @@
+body {
+  background-color: #d4f0ff;
+}
+
+.form-control {
+  margin-top: 1em;
+}
+
+a {
+  color: black;
+}
+
+button {
+  margin-left: 1.5em;
+  background-color: #edf9ff;
+  text-transform: uppercase;
+}
+
+.back_button {
+  margin-top: 2em;
+}

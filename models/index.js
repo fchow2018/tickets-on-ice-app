@@ -1,8 +1,10 @@
 var mongoose = require('mongoose');
 /*add you connection somewhere here*/
-mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/tickets-on-ice', {promiseLibrary: global.Promise});
+// mongoose.connect({promiseLibrary: global.Promise});
+
+const dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/tickets-on-ice'; // localhost
 
 /* adding model User to index.js */
 module.exports.User = require('./User');
-/* adding model Trip to index.js */
+/* adding model Ticket to index.js */
 // module.exports.Ticket = require('./Ticket');

@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "auth0": "^2.9.1",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.8",
     "express": "^4.16.2",
@@ -21,6 +24,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.0",
     "passport-oauth2": "^1.4.0",
+    "popper.js": "^1.14.3",
     "session": "^0.1.0",
     "tm-api": "^0.6.1"
   },

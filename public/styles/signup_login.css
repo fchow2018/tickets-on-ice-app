@@ -2,11 +2,24 @@ body {
   background-color: #d4f0ff;
 }
 
+a {
+  color: black;
+}
+
+.btn-info {
+  color: black;
+}
+
+a:active {
+  text-decoration: none;
+  color: black;
+}
 .row h1{
-  font-size: 25px;
-  margin-top: 0.5em;
-  padding-bottom: 5em;
+  font-size: 18px;
+  margin-top: -0.2em;
+  padding-bottom: 4em;
   text-align: center;
+  text-transform: uppercase;
 
 }
 
@@ -14,7 +27,6 @@ body {
   font-size: 20px;
   margin-top: 5em;
   text-align: center;
-  /* padding-top: -5em; */
 
 }
 
@@ -29,12 +41,9 @@ body {
   margin-left: 2em;
   background-color: #edf9ff;
   border-color: #edf9ff;
+  text-transform: uppercase;
 }
 
 #Login {
   margin-bottom: 1em;
-}
-
-a {
-  color: black;
 }
