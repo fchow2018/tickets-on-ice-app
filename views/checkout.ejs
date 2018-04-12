@@ -80,7 +80,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <input id="form_name" type="text" name="name" class="form-control" placeholder="Credit Card Number *" required="required" data-error="Firstname is required.">
+            <input id="cc_number" type="text" name="name" class="form-control" placeholder="Credit Card # *" required="required" data-error="Firstname is required.">
             <div class="help-block with-errors"></div>
             <div class="form-row align-items-center">
               <div class="col-auto my-1">
@@ -91,134 +91,144 @@
                   <option value="American Express">American Express</option>
                 </select>
               </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <div class="form-row align-items-center">
-            <div class="col-auto my-1">
-              <select class="custom-select mr-sm-2" id="expireMonth">
-                <option selected>Exp Month *</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-            </div>
-            </div>
-            <div class="form-row align-items-center">
-              <div class="col-auto my-1">
-                <select class="custom-select mr-sm-2" id="expireYear">
-                  <option selected>Exp Year *</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-              </div>
-              </div>
-              <input id="security_code" type="text" name="security_code" class="form-control" placeholder="CVC *" required="required" data-error="Security code is required.">
-              <div class="help-block with-errors"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <select class="custom-select mr-sm-2" id="expireMonth">
+              <option selected>Exp Month *</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="form_phone">Phone</label>
-          <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
-          <div class="help-block with-errors"></div>
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <select class="custom-select mr-sm-2" id="expireYear">
+              <option selected>Exp Year *</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="form_message">Message *</label>
-          <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-          <div class="help-block with-errors"></div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <input type="submit" class="btn btn-success btn-send" value="Submit">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <p class="text-muted"><strong>*</strong> These fields are required.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="form_name">First name *</label>
-          <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-          <div class="help-block with-errors"></div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="form_lastname">Last name *</label>
-          <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-          <div class="help-block with-errors"></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="form_email">Email *</label>
-          <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-          <div class="help-block with-errors"></div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="form_phone">Phone</label>
-          <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
-          <div class="help-block with-errors"></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="form_message">Message *</label>
-          <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-          <div class="help-block with-errors"></div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <input type="submit" class="btn btn-success btn-send" value="Submit">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <p class="text-muted"><strong>*</strong> These fields are required.</p>
+        <input id="security_code" type="text" name="security_code" class="form-control" placeholder="CVC *" required="required" data-error="Security code is required.">
+        <div class="help-block with-errors"></div>
       </div>
     </div>
   </div>
 
+  <h5>Billing Address</h5>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input id="form_name" type="text" name="name" class="form-control" placeholder="First name *" required="required" data-error="First name is required.">
+        <div class="help-block with-errors"></div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last name *" required="required" data-error="Last name is required.">
+        <div class="help-block with-errors"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input id="form_address" type="address" name="address" class="form-control" placeholder="Address *" required="required" data-error="Address is required.">
+        <div class="help-block with-errors"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input id="unit_number" type="unit_number" name="unit_number" class="form-control" placeholder="Unit #">
+    </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+    <input id="form_address2" type="address2" name="address2" class="form-control" placeholder="Address Line 2">
+  </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input id="city" type="text" name="city" class="form-control" placeholder="City *" required="required" data-error="City is required.">
+        <div class="help-block with-errors"></div>
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+          <div class="col-auto my-1">
+            <select class="custom-select mr-sm-2" id="state">
+              <option selected>State *</option>
+              <option value="VISA">Alabama</option>
+              <option value="MasterCard">Alaska</option>
+              <option value="American Express">Arizona</option>
+              <option value="VISA">Arkansas</option>
+              <option value="MasterCard">California</option>
+              <option value="American Express">Colorado</option>
+            </select>
+          </div>
+          <input id="zip_code" type="zip_code" name="zip_code" class="form-control" placeholder="Zip code">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone">
+        <div class="help-block with-errors"></div>
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+        <input id="alt_phone" type="tel" name="alt_phone" class="form-control" placeholder="Alternate phone">
+        <div class="help-block with-errors"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <input type="submit" class="btn btn-success btn-send" value="Place Order">
+  </div>
+</div>
 </form>
 </body>
 </html>

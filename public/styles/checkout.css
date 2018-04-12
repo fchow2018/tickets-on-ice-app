@@ -3,8 +3,10 @@ body {
 }
 
 h5 {
-  margin-left: 0.8em;
+  margin-left: 0.7em;
+  text-align: left;
 }
+
 .navbar-brand {
   font-size: 15px;
   text-transform: uppercase;
@@ -14,26 +16,69 @@ h5 {
   background-color: #d4f0ff;
 }
 
-label {
-  margin-left: 0.8em;
-}
-
 input {
   margin-left: 0.8em;
+  text-transform: uppercase;
+}
+
+input#cc_number {
+  width: 45%;
 }
 
 input#form_name{
-  width: 50%;
+  width: 47%;
 }
 
-textarea {
-  margin-left: 0.8em;
+input#form_lastname{
+  margin-top: -3.4em;
+  margin-left: 11.9em;
+  width: 46%;
+}
+
+input#form_address{
+  width: 95%;
+}
+
+input#unit_number{
+  width: 40%;
+}
+
+input#form_address2{
+  margin-top: -3.4em;
+  margin-left: 10.3em;
+  width: 53%;
+}
+
+input#city {
+  width: 40%;
+}
+
+input#zip_code {
+  width: 40%
+}
+
+input#form_phone {
+  width: 95%
+}
+
+input#alt_phone {
+  width: 95%
+}
+
+#city {
+  width: 80%;
+}
+
+#state {
+  margin-top: -3.6em;
+  margin-left: 9.5em;
+  width: 58%;
 }
 
 #creditCardType {
   margin-top: -2.6em;
-  margin-left: 12.5em;
-  width: 44%;
+  margin-left: 11.5em;
+  width: 51%;
 }
 
 #expireMonth {
@@ -67,4 +112,8 @@ li {
 #menu li a {
   list-style-type: none;
   color: black;
+}
+
+btn {
+  text-transform: uppercase;
 }
