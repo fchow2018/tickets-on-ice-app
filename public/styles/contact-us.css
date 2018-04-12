@@ -1,0 +1,39 @@
+body {
+  background-color: #d4f0ff;
+}
+
+h5 {
+  margin-left: 0.8em;
+}
+.navbar-brand {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.navbar {
+  background-color: #d4f0ff;
+}
+
+label {
+  margin-left: 0.8em;
+}
+
+input {
+  margin-left: 0.8em;
+}
+
+textarea {
+  margin-left: 0.8em;
+}
+/* #form_name {
+  width: 30%;
+} */
+
+    li {
+        list-style-type: none;
+    }
+
+    #menu li a {
+      list-style-type: none;
+      color: black;
+    }

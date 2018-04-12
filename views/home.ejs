@@ -30,70 +30,44 @@
 
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
-  <script src="dist/slideout.min.js"></script>
-  <script>
-  var slideout = new Slideout({
-    'panel': document.getElementById('main'),
-    'menu': document.getElementById('menu'),
-    'padding': 256,
-    'tolerance': 70,
-    'easing': 'cubic-bezier(.32,2,.55,.27)'
-  });
-
-
-  // Toggle button
-  document.querySelector('.toggle-button').addEventListener('click', function() {
-    slideout.toggle();
-  });
-  </script>
-
-  <!-- Initialize Bootstrap functionality -->
-  <!-- <script>
-  // Initialize tooltip component
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
-// Initialize popover component
-$(function () {
-$('[data-toggle="popover"]').popover()
-})
-</script> -->
-
 <title>Home</title>
 </head>
 <body>
 
-  <a title="Sign Out" href="/login">Sign Out</a>
-  <ul id="menu">
-    <li><a title="Home" href="/home">Tickets</a></li>
-    <li><a title="Arenas" href="#">Arenas</a></li>
-    <li><a title="Account" href="/account">Account</a></li>
-  </ul>
+<!--Navbar-->
+<nav class="navbar navbar-light light-blue lighten-4">
 
-  <!-- <nav class="navbar navbar-light bg-faded">
+    <!-- Navbar brand -->
+    <a class="navbar-brand">Tickets On Ice</a>
 
-  \
-  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content">
-  &#9776;
-</button>
-<a class="navbar-brand" href='/home'>Tickets On Ice</a>
+    <!-- Collapse button -->
+    <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fa fa-bars fa-1x"></i></span></button>
 
-<div class="collapse navbar-toggleable-xs" id="nav-content">
-<ul class="nav navbar-nav">
-<li class="nav-item">
-<a class="nav-link" href="#">Tickets</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Arenas</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Account</a>
-</li>
-</ul>
-</div>
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 
-</nav> -->
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/home">Search <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tickets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Arenas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/account">Account</a>
+            </li>
+        </ul>
+        <!-- Links -->
+
+    </div>
+    <!-- Collapsible content -->
+
+</nav>
 
 <form class="navbar-form" role="search">
   <div class="input-group add-on">
@@ -104,9 +78,20 @@ $('[data-toggle="popover"]').popover()
   </div>
 </form>
 
-<select class="form-control" col-18>
-  <option value="one">United States</option>
-  <option value="two">Canada</option>
+<select class="form-control">
+  <option value="">Select a team</option>
+  <option disabled value="">National Hockey League</option>
+  <option value="one">Anaheim Ducks</option>
+  <option value="two">Buffalo Sabres</option>
+  <option value="two">Boston Bruins</option>
+  <option disabled value="">American Hockey League</option>
+  <option value="one">San Diego Gulls</option>
+  <option value="two">Ontario Reign</option>
+  <option value="two">Providence Bruins</option>
+  <option disabled value="">Western Hockey League</option>
+  <option value="one">Swift Current Broncos</option>
+  <option value="two">Moose Jaw Warriors</option>
+  <option value="two">Calgary Hitmen</option>
 </select>
 </body>
 </html>

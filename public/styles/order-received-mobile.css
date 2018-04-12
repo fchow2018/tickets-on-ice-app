@@ -2,6 +2,16 @@ body {
   background-color: #d4f0ff;
 }
 
+p {
+  margin-left: 2.5em;
+  width: 80%;
+}
+
+h5 {
+  margin-top: 2em;
+  text-align: center;
+}
+
 .navbar-brand {
   font-size: 15px;
   text-transform: uppercase;
@@ -22,13 +32,13 @@ body {
  -webkit-box-shadow:none;
  border-color:#cccccc;
 }
-.form-control{width:40%}
+.form-control{width:20%}
 
-    li {
-        list-style-type: none;
-    }
+  li {
+    list-style-type: none;
+}
 
-    #menu li a {
-      list-style-type: none;
-      color: black;
-    }
+#menu li a {
+  list-style-type: none;
+  color: black;
+}

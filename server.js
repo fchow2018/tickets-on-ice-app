@@ -91,7 +91,27 @@ app.get('/home', function(req,res){
 
 app.get('/account', function(req,res){
   res.render('account');
-})
+});
+
+app.get('/order-received-print', function(req,res) {
+  res.render('order-received-print');
+});
+
+app.get('/order-received-mobile', function(req,res) {
+  res.render('order-received-mobile');
+});
+
+app.get('/contact-us', function(req,res) {
+  res.render('contact-us');
+});
+
+app.get('/about', function(req,res) {
+  res.render('about');
+});
+
+app.get('/checkout', function(req,res) {
+  res.render('about');
+});
 
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile', {
