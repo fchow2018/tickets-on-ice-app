@@ -7,4 +7,4 @@ const dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/tickets-on-ice'; /
 /* adding model User to index.js */
 module.exports.User = require('./User');
 /* adding model Ticket to index.js */
-// module.exports.Ticket = require('./Ticket');
+module.exports.Tickets = require('./Tickets');

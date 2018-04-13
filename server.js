@@ -9,6 +9,7 @@ TMAPI = require('tm-api')
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
+var axios = require('axios');
 // var User = require('models/User');
 TMAPI.setAPIKey("l9XiABE2P5GIQGAhtFcErCCFoA2Ap9R4");
 TMAPI.setSecret("bzE5ahSftAgfRSMe");
@@ -17,9 +18,10 @@ var promise = TMAPI.events.search("NHL");
 
 var ssn, cookies;
 var User = db.User;
-var Ticket = db.Ticket;
+var Tickets = db.Tickets;
 var Price = db.Price;
 
+// var hockey_games = [object Object]
 app.use(express.static('__tickets-on-ice-app' + '/public'));
 // session
 app.use(session({
@@ -85,9 +87,33 @@ app.get('/signup', function(req,res){
 // process the login forms
 // app.post('/login', do all our passport stuff here);
 
-app.get('/home', function(req,res){
-  res.render('home');
+// app.get('/', function(req,res){
+//   res.render('/home');
+// });
+
+app.get('/home1', function(req,res){
+
+  axios({
+     method: 'GET',
+     url: 'https://api.seatgeek.com/2/events?taxonomies.id=1040100',
+     data:{
+       key:'MTExNjY3OTF8MTUyMzU2OTgxOC41Mg'
+     }
+
+   }).then((res)=>{
+      res.render('home1',{ message: "success!", apiData: apiData});
+   }).catch((err)=>{
+      res.status(200).send(error);
+   })
+
+  res.render('home1');
 });
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated())
+  return next();
+  res.redirect('/');
+}
 
 app.get('/account', function(req,res){
   res.render('account');
@@ -113,45 +139,46 @@ app.get('/checkout', function(req,res) {
   res.render('checkout');
 });
 
-app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile', {
-    user: req.user
-  });
-});
+app.get('/user', function(req, res) {
+  var tickets=[];
+  if(!req.user) {
+    res.redirect('/');
+  } else {
+    Tickets.find({user_id:req.user._id,date_end:{ $ne: null }},function(err,all){
+    res.render('profile',{user:req.user,trips:all});
+    });
 
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated())
-  return next();
-  res.redirect('/');
-}
-app.post('/signup',function(req,res){
-  // ragex for email verification
-  var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-  // email verified
-  if( !emailRegex.test(req.body.username)){;
-    res.status(400).json({message:'Not a valid email address!'});
-}
-  User.register(new User({username:req.body.username,first_name:req.body.first_name,last_name:req.body.last_name})
-  ,req.body.password,function(err,newUser){
-    if(err){
-      res.status(400).json({'message':err});
-      throw err;
-    }else{
-    passport.authenticate('local')(req, res, function(err1,ok) {
-    if(err1){
-  res.status(400).json({'message':err1.message});
-}
-  else{
-    res.redirect('/home');
   }
 });
-}})});
+
+// app.post('/signup',function(req,res){
+//   // ragex for email verification
+//   var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+//   // email verified
+//   if( !emailRegex.test(req.body.username)){;
+//     res.status(400).json({message:'Not a valid email address!'});
+// }
+//   User.register(new User({username:req.body.username,first_name:req.body.first_name,last_name:req.body.last_name})
+//   ,req.body.password,function(err,newUser){
+//     if(err){
+//       res.status(400).json({'message':err});
+//       throw err;
+//     }else{
+//     passport.authenticate('local')(req, res, function(err1,ok) {
+//     if(err1){
+//   res.status(400).json({'message':err1.message});
+// }
+//   else{
+//     res.redirect('/home1');
+//   }
+// });
+// }})});
 
 app.post("/signup", function (req, res) {
   User.register(new User({ username: req.body.username, }), req.body.password,
       function () {
         passport.authenticate("local")(req, res, function() {
-          res.redirect("/home");
+          res.redirect("/home1");
         });
       }
   );
@@ -203,7 +230,6 @@ passport.deserializeUser(function(id, done) {
 //   failureRedirect: '/signup', // redirect back to the signup page if there is an error
 //   failureFlash: true // allow flash messages
 // }));
-
 
 app.listen(process.env.PORT || 3000,function(){
   console.log('server running');
