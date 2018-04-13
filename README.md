@@ -46,6 +46,16 @@ Phone version: https://drive.google.com/open?id=1DPd0c6QZN-IgwdTQU6XbYkrnJmse46I
 <li>Make the account page.</li>
 <li>Create a desktop version for the app</li>
 
+
+# Challenges
+Figuring out how to display ticket data onto homepage
+
+# Future Developments
+Authentication
+Billing and checkout
+Search for hockey games
+Desktop version
+
 # Tools to use
 Git, GitHub, NodeJS, and MongoDB
 
