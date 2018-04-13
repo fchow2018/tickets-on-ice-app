@@ -50,4 +50,4 @@ Phone version: https://drive.google.com/open?id=1DPd0c6QZN-IgwdTQU6XbYkrnJmse46I
 Git, GitHub, NodeJS, and MongoDB
 
 # Outside Tools
-Ticketmaster APIs (Discovery, Commerce, Partner)
+SeatGeek APIs
